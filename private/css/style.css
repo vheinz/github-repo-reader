@@ -1,0 +1,54 @@
+
+ul {
+	list-style:none;
+}
+
+ul li {
+	padding: 0px !important;
+}
+
+.paginating {
+	float:left;
+}
+
+.pageSize {
+	float:right;
+	margin-top: 18px;
+	margin-bottom:18px
+}
+
+.paddingZero {
+	padding-left:0px;
+}
+
+table {
+	width: 100%;
+}
+
+table th {
+	padding: 10px;
+	background-color: #337ab7;
+	color: white;
+}
+
+table th:first-child {
+	border-top-left-radius:5px;
+}
+
+table th:last-child {
+	border-top-right-radius:5px;
+}
+
+table td {
+	padding: 10px;
+	border: #eee 1px solid;
+	
+}
+
+table tr:first-child { 
+	width:30%; 
+}
+
+table tr:second-child { 
+	width:70%; 
+}

@@ -1,0 +1,67 @@
+
+<div ng-controller="ReposCtrl">
+	<div class="jumbotron">
+	    <h1>Github Repo Reader</h1>
+	    <p class="lead">Insert a user name in this textbox and press the button next to it to see the GitHub repos listed</p>
+	    <div class="input-group">
+		  <span class="input-group-addon" id="basic-addon3">UserName</span>
+		  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-model="username" ng-keyup="$event.keyCode == 13 && btGo()">
+		  <span class="input-group-btn">
+	        <button class="btn btn-default" type="button" ng-click="btGo()">Go!</button>
+	      </span>
+		</div>
+	</div>
+	
+	<div class="row">
+	    <div class="col-md-12" ng-if="success === true">
+	        	<h2><b><span ng-bind="usernameDisplay"></span> - List of Github repositories:</b></h2>
+	        	
+	        	<ul class="paddingZero">
+	        		<li>
+	        			<div class="col-md-6 paddingZero">
+	        				<div css="paginating">
+				        		<dir-pagination-controls style="height: 22px;" template-url="/htmlTemplates/pagination.html"></dir-pagination-controls>
+				        	</div>
+	        			</div>
+	        			
+	        			<div class="col-md-6">
+		        			<div class="pageSize">
+		        				<div class="col-md-7">
+		        					<h5 style="float:left;"><b>Items per page:</b> </h5>
+		        				</div>
+		        				<div class="col-md-5">
+		        					<input ng-model="pageSize" type="number" min="1" max="100" class="form-control">
+		        				</div>
+					        </div>
+	        			</div>
+	        		</li>
+	        	</ul>
+	        	
+	        	<div class="col-md-12 paddingZero">
+		        	<table>
+			        	<thead>
+				        	<tr>
+				        		<th>Name</th>
+				        		<th>Description</th>
+				        	</tr>
+			        	</thead>
+			        	<tbody>
+				        	<tr dir-paginate="item in data | itemsPerPage: pageSize">
+				        		<td ng-bind="item.name"></td>
+				        		<td ng-bind="item.description"></td>
+				        	</tr>
+			        	</tbody>
+			        </table>
+	        	</div>
+	    </div>
+	    
+	    <div class="col-md-10" ng-if="success === false">
+	    	<p>There was a problem loading Github Repo</p>
+	    	<ul>
+	    		<li>
+		    		Reason : <span ng-bind="errInfo.message"></span>
+		    	</li>
+	    	</ul>	    	
+	    </div>
+	</div>
+</div>
