@@ -2,7 +2,7 @@
 <div ng-controller="ReposCtrl">
 	<div class="jumbotron">
 	    <h1>Github Repo Reader</h1>
-	    <p class="lead">Insert a user name in this textbox and press the button next to it to see the GitHub repos listed</p>
+	    <p class="lead">Insert a user name in this textbox and press either Enter or Go! to see the GitHub repos listed</p>
 	    <div class="input-group">
 		  <span class="input-group-addon" id="basic-addon3">UserName</span>
 		  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-model="username" ng-keyup="$event.keyCode == 13 && btGo()">
@@ -47,7 +47,7 @@
 			        	</thead>
 			        	<tbody>
 				        	<tr dir-paginate="item in data | itemsPerPage: pageSize">
-				        		<td ng-bind="item.name"></td>
+				        		<td><a ng-href="[[item.html_url]]" ng-bind="item.name"></a></td>
 				        		<td ng-bind="item.description"></td>
 				        	</tr>
 			        	</tbody>

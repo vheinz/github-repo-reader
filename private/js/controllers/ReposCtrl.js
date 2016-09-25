@@ -3,7 +3,7 @@ module.controller('ReposCtrl', ['$scope', '$rootScope', '$http', 'Get', function
     
 	$scope.pageSize = 5;
 	
-	$scope.username = "goeuro";
+	$scope.username = "";
 	
 	$scope.success = null;
 	

@@ -45,10 +45,6 @@ table td {
 	
 }
 
-table tr:first-child { 
-	width:30%; 
-}
-
-table tr:second-child { 
-	width:70%; 
+table tr td:first-child { 
+	width:30% !important; 
 }

@@ -1,4 +1,7 @@
-var module = angular.module('app', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', 'ngRoute', 'angularUtils.directives.dirPagination']);
+var module = angular.module('app', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', 'ngRoute', 'angularUtils.directives.dirPagination']).config(['$interpolateProvider', function ($interpolateProvider) {
+	  $interpolateProvider.startSymbol('[[');
+	  $interpolateProvider.endSymbol(']]');
+	}]);
 
 module.service('Error', ['$rootScope', function ($rootScope) {
 	this.raise = function(message){
@@ -37,14 +40,14 @@ module.service('Get', ['$rootScope', '$http', 'Error', function ($rootScope, $ht
 
 
 module.controller('FooterCtrl', ['$scope', function ($scope) {
-	$scope.dateTime = new Date().toLocaleDateString();
+	$scope.dateTime = "2016";
 }]);
 
 module.controller('ReposCtrl', ['$scope', '$rootScope', '$http', 'Get', function ($scope, $rootScope, $http, Get) {
     
 	$scope.pageSize = 5;
 	
-	$scope.username = "goeuro";
+	$scope.username = "";
 	
 	$scope.success = null;
 	
