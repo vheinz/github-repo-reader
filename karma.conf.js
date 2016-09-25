@@ -25,7 +25,8 @@ module.exports = function(config) {
             './public/libs/js/dirPagination.js',
             './node_modules/angular-mocks/angular-mocks.js',
             './private/js/app.js',
-            './private/js/services/Get.spec.js'
+            './private/js/services/Get.spec.js',
+            './private/js/services/Error.spec.js'
     ],
 
 

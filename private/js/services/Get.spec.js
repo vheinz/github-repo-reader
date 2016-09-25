@@ -7,7 +7,11 @@ describe('Get Service - getts repos of url', function() {
 		Get = _Get_;
 	}));
 	
-	it('should exist', function() {
+	it('Get service should exist', function() {
 		expect(Get).toBeDefined();
+	}); 
+	
+	it('Get.Repos function should exist', function() {
+		expect(Get.Repos).toBeDefined();
 	}); 
 });
